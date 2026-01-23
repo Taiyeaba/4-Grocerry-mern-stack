@@ -14,7 +14,7 @@ const upload = multer({ storage });
 
 
 require('dotenv').config();
-//AYnY0rdw0ImirW3N
+
 //middleware
 app.use(cors());
 app.use(express.json());
@@ -117,21 +117,16 @@ async function run() {
 
 
 
-    // GET → all product 
-    // app.get('/products', async (req, res) => {
+   
 
-    //   const result = await productcollection.find().toArray();
-    //   res.send(result);
-    // });
-
-   // 🌍 PUBLIC → All Products (no login needed)
+   //  PUBLIC → All Products (no login needed)
 app.get("/products/public", async (req, res) => {
   const products = await productcollection.find({ inStock: true }).toArray();
   res.send(products);
 });
 
 
-//2
+
 app.get("/products", verifyFBToken, async (req, res) => {
   try {
     const email = req.decoded.email;
@@ -238,7 +233,7 @@ app.patch("/products/price/:id", verifyFBToken, async (req, res) => {
 
   const dbUser = await userscollection.findOne({ email });
 
-  // 🔐 security check
+  //  security check
   if (
     dbUser.role !== "admin" &&
     product.sellerEmail !== email
@@ -259,14 +254,6 @@ app.patch("/products/price/:id", verifyFBToken, async (req, res) => {
 
   res.send({ success: true });
 });
-
-
-
-
-
-
-
-
 
 
 
@@ -374,11 +361,6 @@ app.get("/orders", verifyFBToken, async (req, res) => {
 
 
 
-   
-
-
-
-
 
     //was it logged in before
     app.post('/users', async (req, res) => {
@@ -423,12 +405,6 @@ app.get("/orders", verifyFBToken, async (req, res) => {
 
 
 
-    // app.get("/users/:email", verifyFBToken, async (req, res) => {
-    //   const email = req.params.email;
-    //   const user = await userscollection.findOne({ email });
-    //   res.send(user);
-    // });
-
   app.get("/users/:email", verifyFBToken, async (req, res) => {
   const email = req.params.email;
 
@@ -448,7 +424,6 @@ app.get("/orders", verifyFBToken, async (req, res) => {
 
 
 
-    
 
   //profile
    app.patch("/users/:email", verifyFBToken, async (req, res) => {
@@ -546,3 +521,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`grocerry server is running ${port}`)
 })
+
