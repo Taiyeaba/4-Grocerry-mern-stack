@@ -6,7 +6,7 @@ A full-featured grocery e-commerce web application built with the MERN Stack, Fi
 
 ## 🌐 Live Demo
 👉 [Live Site URL](#)  
-(Add your deployed site link here)
+(https://grocerry-full-stack.web.app)
 
 ---
 
