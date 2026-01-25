@@ -3,7 +3,9 @@ import React from 'react';
 const SellerWelcome = () => {
   return (
     <div>
-     se welcome
+
+
+      <p>welcome</p>
     </div>
   );
 };
