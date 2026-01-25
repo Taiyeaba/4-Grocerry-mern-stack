@@ -169,7 +169,7 @@ A full-featured grocery e-commerce web application built with the MERN Stack, Fi
 ### Users
 1. `shuva@gmail.com` | Password: `shuva12345`
 2. `dipa@gmail.com` | Password: `dipa12345`
-3. `priti@gmail.com` | Password: `priti@gmail.com`
+3. `priti@gmail.com` | Password: `priti12345`
 
 ### Sellers
 1. `hafsa@gmail.com` | Password: `hafsa12345`
