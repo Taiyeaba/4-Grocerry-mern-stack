@@ -43,7 +43,8 @@ const Login = () => {
             <input
               {...register('email')}
               id="email"
-              className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all text-black placeholder-gray-400
+"
               type="email"
               placeholder="you@example.com"
               required
@@ -59,7 +60,7 @@ const Login = () => {
 
 
               <Link
-                to="/auth/forgot-password"
+                to=""
                 className="text-sm text-emerald-600 hover:text-emerald-700 font-medium"
               >
                 Forgot Password?
@@ -68,7 +69,7 @@ const Login = () => {
             <input
             {...register('password',{required:true,minLength:6})}
               id="password"
-              className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all text-black placeholder-gray-400"
               type="password"
               placeholder="Enter your password"
               required

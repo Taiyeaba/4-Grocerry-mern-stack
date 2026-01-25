@@ -83,7 +83,7 @@ const Register = () => {
                 type="text"
                 id="firstName"
                 placeholder="John"
-                className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all text-black placeholder-gray-400"
               />
             </div>
             <div>
@@ -95,7 +95,7 @@ const Register = () => {
                 type="text"
                 id="lastName"
                 placeholder="Doe"
-                className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all text-black placeholder-gray-400"
               />
             </div>
           </div>
@@ -110,7 +110,7 @@ const Register = () => {
               id="email"
               placeholder="name@example.com"
               autoComplete="email"
-              className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all  text-black placeholder-gray-400"
             />
             {
               errors.email?.type === 'required && <p> email is required <p/>'
@@ -127,7 +127,7 @@ const Register = () => {
               id="password"
               placeholder="Create a strong password"
               autoComplete="new-password"
-              className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-emerald-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all  text-black placeholder-gray-400"
             />
             {
               errors.password?.type === 'required && <p> password is required <p/>'
@@ -145,7 +145,7 @@ const Register = () => {
             </label>
 
             <div className="flex gap-6">
-              <label className="flex items-center gap-2">
+              <label className="flex items-center gap-2 text-gray-700">
                 <input
                   type="radio"
                   value="user"
@@ -155,7 +155,7 @@ const Register = () => {
                 User
               </label>
 
-              <label className="flex items-center gap-2">
+              <label className="flex items-center gap-2 text-gray-700">
                 <input
                   type="radio"
                   value="seller"

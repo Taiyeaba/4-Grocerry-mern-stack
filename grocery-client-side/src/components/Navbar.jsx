@@ -325,7 +325,7 @@ const Navbar = () => {
                   navigate(`/all-products?search=${value}`);
                 }}
                 placeholder="What are you looking for?"
-                className="bg-transparent ml-3 w-full focus:outline-none text-sm"
+                className="bg-transparent ml-3 w-full focus:outline-none text-black text-sm placeholder-gray-400"
               />
 
               <button
@@ -343,7 +343,7 @@ const Navbar = () => {
 
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
+        {/* {isMenuOpen && (
           <div className="lg:hidden border-t border-gray-100 pt-4 pb-3 animate-fadeIn">
             <ul className="space-y-3 px-2">
               {React.Children.map(navItems.props.children, (child) =>
@@ -354,7 +354,64 @@ const Navbar = () => {
               )}
             </ul>
           </div>
+        )} */}
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden border-t border-gray-100 pt-4 pb-3 animate-fadeIn">
+            <ul className="space-y-3 px-2">
+              {(role === "admin" || role === "seller") && (
+                <li>
+                  <NavLink
+                    to="/seller"
+                    onClick={() => setIsMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `block py-2 px-3 rounded-lg ${isActive
+                        ? "bg-emerald-50 text-emerald-600 font-semibold"
+                        : "text-gray-700 hover:bg-emerald-50"
+                      }`
+                    }
+                  >
+                    Dashboard
+                  </NavLink>
+                </li>
+              )}
+
+              <li>
+                <NavLink
+                  to="/"
+                  onClick={() => setIsMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `block py-2 px-3 rounded-lg ${isActive
+                      ? "bg-emerald-50 text-emerald-600 font-semibold"
+                      : "text-gray-700 hover:bg-emerald-50"
+                    }`
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink
+                  to="/all-products"
+                  onClick={() => setIsMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `block py-2 px-3 rounded-lg ${isActive
+                      ? "bg-emerald-50 text-emerald-600 font-semibold"
+                      : "text-gray-700 hover:bg-emerald-50"
+                    }`
+                  }
+                >
+                  All Products
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         )}
+
+
+
       </div>
     </nav>
   );

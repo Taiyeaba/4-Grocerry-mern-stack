@@ -22,7 +22,7 @@ const Footer = () => {
 
             {/* Text + Input */}
             <div className="md:w-1/2 text-center md:text-left">
-              <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+              <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 text-black">
                 Get Grocery News!
               </h2>
               <p className="text-gray-500 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed">

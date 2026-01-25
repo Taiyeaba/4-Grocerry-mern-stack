@@ -13,19 +13,21 @@ const SellerLayout = () => {
       <div className="flex flex-1 flex-col md:flex-row">
 
         {/* SIDEBAR */}
-        <aside className="w-full md:w-64 bg-white border-r md:border-r p-3 md:p-4">
+        <aside className="w-full md:w-64 bg-white border-b md:border-b-0 md:border-r p-2 sm:p-3 md:p-4">
 
           {/* NavLink container */}
-          <nav className="flex md:flex-col justify-center md:justify-start gap-3 md:gap-2">
+          <nav className="flex flex-row md:flex-col gap-2 md:gap-2 overflow-x-auto md:overflow-visible">
 
             <NavLink
               to="/seller/add-product"
               className={({ isActive }) =>
-                `px-4 py-3 rounded text-lg md:text-base whitespace-nowrap font-medium ${
+                `flex-shrink-0 px-4 py-2.5 rounded text-base md:text-base whitespace-nowrap font-medium
+                ${
                   isActive
                     ? "bg-emerald-100 text-emerald-700"
                     : "hover:bg-gray-100"
-                } text-center md:text-left`
+                }
+                text-center md:text-left`
               }
             >
               ➕ Add Product
@@ -34,11 +36,13 @@ const SellerLayout = () => {
             <NavLink
               to="/seller/products"
               className={({ isActive }) =>
-                `px-4 py-3 rounded text-lg md:text-base whitespace-nowrap font-medium ${
+                `flex-shrink-0 px-4 py-2.5 rounded text-base md:text-base whitespace-nowrap font-medium
+                ${
                   isActive
                     ? "bg-emerald-100 text-emerald-700"
                     : "hover:bg-gray-100"
-                } text-center md:text-left`
+                }
+                text-center md:text-left`
               }
             >
               📦 Product List
@@ -47,11 +51,13 @@ const SellerLayout = () => {
             <NavLink
               to="/seller/orders"
               className={({ isActive }) =>
-                `px-4 py-3 rounded text-lg md:text-base whitespace-nowrap font-medium ${
+                `flex-shrink-0 px-4 py-2.5 rounded text-base md:text-base whitespace-nowrap font-medium
+                ${
                   isActive
                     ? "bg-emerald-100 text-emerald-700"
                     : "hover:bg-gray-100"
-                } text-center md:text-left`
+                }
+                text-center md:text-left`
               }
             >
               🧾 Orders
@@ -61,7 +67,7 @@ const SellerLayout = () => {
         </aside>
 
         {/* MAIN CONTENT */}
-        <main className="flex-1 bg-gray-50 p-4 sm:p-6">
+        <main className="flex-1 bg-gray-50 p-3 sm:p-4 md:p-6">
           <Outlet />
         </main>
 

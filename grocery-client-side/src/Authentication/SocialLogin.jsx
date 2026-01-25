@@ -78,7 +78,7 @@ const SocialLogin = ({ selectedRole }) => {
     <button
       onClick={handleGoogleSignIn}
       type="button"
-      className="w-full flex items-center gap-2 justify-center my-3 bg-white border py-2.5 rounded-full"
+      className="w-full flex items-center gap-2 text-black  justify-center my-3 bg-white border border-black py-2.5 rounded-full"
     >
       <img
         className="h-4 w-4"

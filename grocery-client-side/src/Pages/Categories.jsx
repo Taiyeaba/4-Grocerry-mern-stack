@@ -26,7 +26,7 @@ const Category = () => {
               alt={category.text}
               className="max-w-28 transition-transform duration-300 group-hover:scale-110"
             />
-            <p className="text-sm font-medium text-center">{category.text}</p>
+            <p className="text-sm font-medium text-center text-gray-800">{category.text}</p>
           </div>
         ))}
       </div>

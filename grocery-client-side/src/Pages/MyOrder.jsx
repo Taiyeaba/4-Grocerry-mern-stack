@@ -19,16 +19,18 @@ const MyOrder = () => {
   }
 
   return (
-    <div className="max-w-5xl mx-auto py-16 px-4">
-      <h1 className="text-2xl font-semibold mb-6">My Orders</h1>
+    <div className="max-w-5xl mx-auto py-10 px-3 sm:px-4">
+      <h1 className="text-xl sm:text-2xl font-semibold mb-6 text-center sm:text-left">
+        My Orders
+      </h1>
 
       {orders.map((order) => (
         <div
           key={order._id}
-          className="border rounded-lg mb-6 bg-white"
+          className="border rounded-lg mb-6 bg-white overflow-hidden"
         >
           {/* ORDER HEADER */}
-          <div className="flex justify-between text-sm p-4 border-b bg-gray-50">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-2 text-sm p-4 border-b bg-gray-50">
             <p>
               <span className="font-medium">Order ID:</span> {order.id}
             </p>
@@ -44,8 +46,9 @@ const MyOrder = () => {
           {order.items.map((item) => (
             <div
               key={item._id}
-              className="flex justify-between items-center p-4 border-b"
+              className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 p-4 border-b"
             >
+              {/* PRODUCT INFO */}
               <div className="flex items-center gap-4">
                 <img
                   src={Array.isArray(item.image) ? item.image[0] : item.image}
@@ -54,19 +57,29 @@ const MyOrder = () => {
                 />
 
                 <div>
-                  <p className="font-medium">{item.name}</p>
-                  <p className="text-sm text-gray-500">{item.category}</p>
+                  <p className="font-medium text-sm sm:text-base">
+                    {item.name}
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-500">
+                    {item.category}
+                  </p>
                 </div>
               </div>
 
-              <div className="text-sm text-gray-600">
+              {/* ORDER DETAILS */}
+              <div className="text-xs sm:text-sm text-gray-600 space-y-1">
                 <p>Qty: {item.quantity}</p>
                 <p>Status: {order.status}</p>
-                <p>Date: {new Date(order.date).toLocaleDateString()}</p>
-                <p>Address: {formatAddress(order.address)}</p>
+                <p>
+                  Date: {new Date(order.date).toLocaleDateString()}
+                </p>
+                <p className="break-words">
+                  Address: {formatAddress(order.address)}
+                </p>
               </div>
 
-              <p className="font-medium">
+              {/* PRICE */}
+              <p className="font-medium text-right sm:text-left">
                 ${item.offerPrice * item.quantity}
               </p>
             </div>

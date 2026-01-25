@@ -360,10 +360,10 @@ const ProductDetails = () => {
 
       {/* Reviews List - MODIFIED SECTION */}
       <div className="mt-16 border-t pt-10">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Customer Reviews</h2>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
               <div className="flex items-center">
                 <span className="text-4xl font-bold text-gray-900 mr-2">{averageRating}</span>
                 <span className="text-gray-500">out of 5</span>
@@ -409,7 +409,7 @@ const ProductDetails = () => {
           <div className="grid gap-6">
             {reviews.map(r => (
               <div key={r._id} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-sm transition">
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-semibold">
                       {getInitials(r.reviewerEmail)}
@@ -424,7 +424,7 @@ const ProductDetails = () => {
                           <span className="ml-2 px-2 py-1 bg-green-100 text-green-600 text-xs font-medium rounded">Moderator</span>
                         )}
                       </h4>
-                      <p className="text-sm text-gray-500">{r.reviewerEmail}</p>
+                      <p className="text-sm text-gray-500 break-all">{r.reviewerEmail}</p>
                     </div>
                   </div>
                   <div className="text-right">
